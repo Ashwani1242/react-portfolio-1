@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+    cursor: none;
+} */
+
 body {
     max-width: 1920px;
     margin: 0 auto;
@@ -17,4 +21,16 @@ body {
 }
 .bg-floralwhite {
     background-color: floralwhite;
+}
+
+.mask {
+    mask-image: url("../public/mask.svg");
+    background-color: #07897f;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    pointer-events: none;
 }
