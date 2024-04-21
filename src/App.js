@@ -3,7 +3,7 @@ import Intro from "./components/intro";
 import Navbar from "./components/navbar";
 
 import React from 'react'
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, stagger, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -46,6 +46,11 @@ function App() {
       backgroundColor: "purple",
       mixBlendMode: "exclusion"
     },
+    hidden: {
+      scale: 0,
+      backgroundColor: "black",
+      mixBlendMode: "normal"
+    }
   }
 
   const [cursorVariant, setCursorVariant] = useState("default")
@@ -53,11 +58,14 @@ function App() {
   const secondaryTextEnter = () => setCursorVariant("secondaryText")
   const tirtiaryTextEnter = () => setCursorVariant("tirtiaryText")
   const textLeave = () => setCursorVariant("default")
+  const cursorHidden = () => setCursorVariant("hidden")
 
   return (
     <div className="">
       <Navbar />
-      <Intro tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
+      <Intro cursorHidden={cursorHidden} tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
+      <About />
+      <About />
       <About />
 
       <motion.div
