@@ -116,9 +116,6 @@ const Intro = (props) => {
                     scale: 1.1
                 }}
                 className='border-2 group border-black rounded-full w-[30px] h-[60px] flex justify-center items-end transition-all duration-300 mb-20'>
-                {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6 floralwhite animate-bounce">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-                </svg> */}
                 <div className='h-[24px] w-[24px] bg-black rounded-full animate-bounce group-hover:animate-ping' />
             </motion.button>
 

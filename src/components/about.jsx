@@ -123,12 +123,12 @@ const About = () => {
                 </div>
                 <div>
                     <div
-                        className='border-y border-neutral-500 py-16 px-12 mt-16'>
+                        className='border-y border-neutral-500 py-16 sm:px-12 px-2'>
                         <motion.h1
                             initial="hidden"
                             whileInView="visible"
                             variants={fadeRightVariants}
-                            className='font-carattere lg:text-[68px] md:text-[52px] text-[36px] leading-none text-wrap py-12'>
+                            className='font-carattere lg:text-[68px] text-[52px] leading-none text-wrap py-12'>
                             Skills ~
                         </motion.h1>
                         <motion.div
@@ -148,12 +148,12 @@ const About = () => {
                         </motion.div>
                     </div>
                     <div className='border-bk border-neutral-500 lg:flex lg:flex-row pt-10 justify-between'>
-                        <div className='pt-12 px-12'>
+                        <div className='py-12 sm:px-12 px-6'>
                             <motion.h1
                                 initial="hidden"
                                 whileInView="visible"
                                 variants={fadeRightVariants}
-                                className='font-carattere lg:text-[68px] md:text-[52px] text-[36px] leading-none text-wrap pb-10'>
+                                className='font-carattere lg:text-[68px] text-[52px] leading-none text-wrap pb-10'>
                                 Education ~
                             </motion.h1>
                             <motion.ol
@@ -181,12 +181,13 @@ const About = () => {
                                 </motion.li>
                             </motion.ol>
                         </div>
-                        <div className='pt-12 px-12'>
+                        <div className='w-full h-[1px] bg-neutral-500 lg:hidden block'/>
+                        <div className='py-12 sm:px-12 px-6'>
                             <motion.h1
                                 initial="hidden"
                                 whileInView="visible"
                                 variants={fadeLeftVariants}
-                                className='font-carattere lg:text-[68px] md:text-[52px] text-[36px] leading-none text-wrap pb-10'>
+                                className='font-carattere lg:text-[68px] text-[52px] leading-none text-wrap pb-10'>
                                 Certifications ~
                             </motion.h1>
                             <motion.ol
