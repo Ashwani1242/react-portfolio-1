@@ -65,8 +65,6 @@ function App() {
       <Navbar />
       <Intro cursorHidden={cursorHidden} tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
       <About />
-      <About />
-      <About />
 
       <motion.div
         className="mask flex justify-center items-center"
