@@ -6,7 +6,7 @@
 
 /* * {
     cursor: none; */
-    /* overflow-x: hidden;
+/* overflow-x: hidden;
 } */
 
 body {
@@ -14,7 +14,7 @@ body {
     width: 100vw;
     max-width: 1920px;
     margin: 0 auto;
-    background-color:floralwhite;
+    background-color: floralwhite;
     font-family: "Cormorant", serif;
     font-optical-sizing: auto;
 }
@@ -22,6 +22,7 @@ body {
 .floralwhite {
     color: floralwhite;
 }
+
 .bg-floralwhite {
     background-color: floralwhite;
 }
@@ -36,4 +37,9 @@ body {
     left: 0px;
     z-index: 100;
     pointer-events: none;
+}
+
+.about-background {
+    background-image: url('../public/noise.svg');
+    background-color: #202020;
 }

@@ -3,8 +3,9 @@ import Intro from "./components/intro";
 import Navbar from "./components/navbar";
 
 import React from 'react'
-import { motion, stagger, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
+import Projects from "./components/projects";
 
 function App() {
 
@@ -65,6 +66,7 @@ function App() {
       <Navbar />
       <Intro cursorHidden={cursorHidden} tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
       <About />
+      <Projects/>
 
       <motion.div
         className="mask flex justify-center items-center"
