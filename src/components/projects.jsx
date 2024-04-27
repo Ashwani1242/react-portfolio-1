@@ -1,5 +1,5 @@
 
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, delay } from "framer-motion";
 import React, { useState, useRef } from 'react'
 import ProjectsBG from './utils/projects_bg'
 
@@ -56,6 +56,7 @@ const Projects = () => {
             transition: {
                 staggerChildren: 0.3,
                 duration: 0.5,
+                delay: 0.2,
             },
         }
     }
@@ -64,7 +65,7 @@ const Projects = () => {
         <div className=' flex p-1 justify-center bg-floralwhite items-center'>
 
 
-            <section ref={targetRef} className="relative h-[1000vh] sm:h-[600vh] bg-neutral-900">
+            <section ref={targetRef} className="relative h-[1000vh] sm:h-[600vh] bg-neutral-950">
 
                 <div className="sticky top-0 h-screen flex flex-col justify-around md:justify-normal items-center">
                     <ProjectsBG />
@@ -124,8 +125,7 @@ const Card = ({ card }) => {
     return (
         <div
             key={card.id}
-            className="group relative h-[450px] w-[400px] overflow-hidden bg-neutral-200"
-        >
+            className="group relative h-[450px] w-[400px] overflow-hidden bg-neutral-200">
             <div
                 style={{
                     backgroundImage: `url(${card.url})`,
