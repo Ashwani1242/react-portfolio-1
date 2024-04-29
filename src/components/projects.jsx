@@ -196,4 +196,4 @@ const cards = [
 
 
 
-///  six
+///  seven
