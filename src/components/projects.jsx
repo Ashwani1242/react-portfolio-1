@@ -67,13 +67,13 @@ const Projects = () => {
 
             <section ref={targetRef} className="relative h-[1000vh] sm:h-[600vh] bg-neutral-950">
 
-                <div className="sticky top-0 h-screen flex flex-col justify-around md:justify-normal items-center">
+                <div className="sticky top-0 h-screen flex flex-col justify-around md:justify-between items-center">
                     <ProjectsBG />
                     <motion.h1
                         initial="hidden"
                         whileInView="visible"
                         variants={fadeUpVariants}
-                        className='md:p-28 p-10 font-carattere text-center floralwhite lg:text-[100px] md:text-[84px] sm:text-[68px] text-[52px] leading-none'>
+                        className='kmd:p-28 p-10 font-carattere text-center floralwhite lg:text-[100px] md:text-[84px] sm:text-[68px] text-[52px] leading-none flex-1'>
                         Projects
                     </motion.h1>
                     <div className="flex items-center overflow-hidden justify-center">
@@ -123,7 +123,7 @@ const Card = ({ card }) => {
     return (
         <div
             key={card.id}
-            className="group relative h-[80vh] w-[76vh] overflow-hidden bg-neutral-200">
+            className="group relative h-[700px] w-[700px] overflow-hidden bg-neutral-200">
             <div
                 style={{
                     backgroundImage: `url(${card.url})`,
