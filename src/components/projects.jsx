@@ -73,10 +73,10 @@ const Projects = () => {
                         initial="hidden"
                         whileInView="visible"
                         variants={fadeUpVariants}
-                        className='kmd:p-28 p-10 font-carattere text-center floralwhite lg:text-[100px] md:text-[84px] sm:text-[68px] text-[52px] leading-none flex-1'>
+                        className='md:m-auto p-10 font-carattere text-center floralwhite lg:text-[100px] md:text-[84px] sm:text-[68px] text-[52px] leading-none'>
                         Projects
                     </motion.h1>
-                    <div className="flex items-center overflow-hidden justify-center">
+                    <div className="flex items-center overflow-hidden justify-center flex-1">
                         <motion.div style={{ x }} className="flex gap-4">
                             <div className="h-[450px] w-[400px] border border-white flex flex-col gap-4 justify-center items-center">
                                 <motion.button
