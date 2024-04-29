@@ -113,8 +113,6 @@ const Projects = () => {
                     </div>
                 </div>
             </section>
-
-
         </div>
     )
 }
@@ -125,7 +123,7 @@ const Card = ({ card }) => {
     return (
         <div
             key={card.id}
-            className="group relative h-[450px] w-[400px] overflow-hidden bg-neutral-200">
+            className="group relative h-[80vh] w-[76vh] overflow-hidden bg-neutral-200">
             <div
                 style={{
                     backgroundImage: `url(${card.url})`,
