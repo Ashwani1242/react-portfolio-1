@@ -99,7 +99,7 @@ const Projects = () => {
                         Projects
                     </motion.h1> */}
                     <div className="flex items-center justify-center h-full">
-                        <motion.div style={{ x }} className="flex gap-4 h-full">
+                        <motion.div style={{ x }} className="flex gap- h-full">
                             {/* <div className="h-full ml-20 w-[75vw] border border-white flex flex-col gap-4 justify-center items-center">
                                 <motion.button
                                     whileHover={{
