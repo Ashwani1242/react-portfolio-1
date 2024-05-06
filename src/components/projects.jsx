@@ -10,7 +10,7 @@ const Projects = () => {
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["46%", "-46%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ["54%", "-45%"]);
 
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 40 },
@@ -65,20 +65,42 @@ const Projects = () => {
         <div className=' flex p-1 justify-center bg-floralwhite items-center'>
 
 
-            <section ref={targetRef} className="relative h-[1000vh] sm:h-[600vh] bg-neutral-950">
+
+            <section ref={targetRef} className="relative h-[1000vh] sm:h-[600vh] bg-transparent">
+
+
 
                 <div className="sticky top-0 h-screen flex flex-col justify-around md:justify-between items-center">
-                    <ProjectsBG />
-                    <motion.h1
+                    <div className="h-screen w-screen border border-white bg-neutral-950 flex flex-col gap-4 justify-center items-center absolute">
+                        <svg className="w-full absolute opacity h-full opacity-20 " xmlns='http://www.w3.org/2000/svg'>
+                            <filter id='noiseFilter'>
+                                <feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' />
+                            </filter>
+
+                            <rect width='100%' height='100%' filter='url(#noiseFilter)' />
+                        </svg>
+                        <motion.button
+                            whileHover={{
+                                scale: 1.1
+                            }}
+                            className='border-2 group border-white rounded-full w-[30px] h-[60px] flex justify-center items-end transition-all duration-300'>
+                            <div className='h-[24px] w-[24px] bg-white rounded-full animate-bounce group-hover:animate-ping' />
+                        </motion.button>
+                        <motion.h1
+                            className='text-right lg:text-[30px] floralwhite md:text-[27px] sm:text-[24px] text-[20px] font-carattere'>
+                            Keep Scrolling
+                        </motion.h1>
+                    </div>
+                    {/* <motion.h1
                         initial="hidden"
                         whileInView="visible"
                         variants={fadeUpVariants}
                         className='md:m-auto p-10 font-carattere text-center floralwhite lg:text-[100px] md:text-[84px] sm:text-[68px] text-[52px] leading-none'>
                         Projects
-                    </motion.h1>
-                    <div className="flex items-center overflow-hidden justify-center flex-1">
-                        <motion.div style={{ x }} className="flex gap-4">
-                            <div className="h-[450px] w-[400px] border border-white flex flex-col gap-4 justify-center items-center">
+                    </motion.h1> */}
+                    <div className="flex items-center justify-center h-full">
+                        <motion.div style={{ x }} className="flex gap-4 h-full">
+                            {/* <div className="h-full ml-20 w-[75vw] border border-white flex flex-col gap-4 justify-center items-center">
                                 <motion.button
                                     whileHover={{
                                         scale: 1.1
@@ -90,13 +112,13 @@ const Projects = () => {
                                     className='text-right lg:text-[30px] floralwhite md:text-[27px] sm:text-[24px] text-[20px] font-carattere'>
                                     Keep Scrolling
                                 </motion.h1>
-                            </div>
+                            </div> */}
 
                             {cards.map((card) => {
                                 return <Card card={card} key={card.id} />;
                             })}
 
-                            <div className="h-[450px] w-[400px] border border-white flex flex-col gap-4 justify-center items-center">
+                            {/* <div className="h-[450px] w-[400px] border border-white flex flex-col gap-4 justify-center items-center">
                                 <motion.button
                                     whileHover={{
                                         scale: 1.1
@@ -108,11 +130,12 @@ const Projects = () => {
                                     className='text-right lg:text-[30px] floralwhite md:text-[27px] sm:text-[24px] text-[20px] font-carattere'>
                                     More Projects
                                 </motion.h1>
-                            </div>
+                            </div> */}
                         </motion.div>
                     </div>
                 </div>
             </section>
+
         </div>
     )
 }
@@ -123,7 +146,7 @@ const Card = ({ card }) => {
     return (
         <div
             key={card.id}
-            className="group relative h-[700px] w-[700px] overflow-hidden bg-neutral-200">
+            className="group relative h-screen w-[105vw] overflow-hidden bg-neutral-600">
             <div
                 style={{
                     backgroundImage: `url(${card.url})`,
