@@ -63,7 +63,7 @@ function App() {
 
   return (
     <div className="">
-      <Navbar />
+      {/* <Navbar /> */}
       <Intro cursorHidden={cursorHidden} tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
       <About />
       <Projects/>

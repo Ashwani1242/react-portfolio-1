@@ -94,7 +94,7 @@ const About = () => {
                         initial="hidden"
                         whileInView="visible"
                         variants={fadeUpVariants}
-                        className='font-carattere text-center lg:text-[100px] md:text-[84px] sm:text-[68px] text-[52px] leading-none pb-10'>
+                        className='font-carattere text-cente lg:text-[100px] md:text-[84px] sm:text-[68px] text-[52px] leading-none pb-10'>
                         Hello!
                     </motion.h1>
                     <motion.p
