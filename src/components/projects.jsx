@@ -81,7 +81,7 @@ const Projects = () => {
                             initial="hidden"
                             whileInView="visible"
                             variants={fadeUpVariants}
-                            className='font-carattere lg:text-[100px] md:text-[84px] sm:text-[68px] text-[52px] leading-none pb-4'>
+                            className='font-carattere lg:text-[100px] md:text-[84px] text-[68px] leading-none pb-4'>
                             Projects
                         </motion.h1>
                         <motion.h1
@@ -92,7 +92,7 @@ const Projects = () => {
                                 duration: 0.3,
                                 delay: 0.6
                             }}
-                            className='lg:text-[50px] md:text-[40px] sm:text-[30px] text-[20px] font-caratter'>
+                            className='lg:text-[50px] md:text-[40px] text-[30px] font-caratter'>
                             Some things I've made so far...
                         </motion.h1>
                     </div>
@@ -116,6 +116,18 @@ const cards = [
     {
         url: "/images/projects/1.png",
         title: "Title 1",
+        links: [
+            "github link", 
+            "playstore link",
+            "web link",
+            "itch link"
+        ],
+        icons: [
+            "github", 
+            "playstore",
+            "web",
+            "itch",
+        ],
         id: 1,
     },
     {

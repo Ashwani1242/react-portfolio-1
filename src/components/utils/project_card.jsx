@@ -45,41 +45,46 @@ const ProjectCard = ({ card }) => {
     };
 
     return (
-        <motion.div
-            key={card.id}
-            ref={ref}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{
-                transformStyle: "preserve-3d",
-                transform,
-            }}
-            className="relative h-96 w-72 sm:h-[480px] sm:w-[360px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
-        >
-
-{/* 384 288 */}
-    
-            <div
+        <div className="space-y-4">
+            <motion.div
+                key={card.id}
+                ref={ref}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
                 style={{
-                    backgroundImage: `url(${card.url})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    transform: "translateZ(75px)",
                     transformStyle: "preserve-3d",
+                    transform,
                 }}
-                className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
-            >
-                <p
+                className="relative h-96 w-72 sm:h-[480px] sm:w-[360px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
+                <div
                     style={{
-                        transform: "translateZ(50px)",
+                        backgroundImage: `url(${card.url})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        transform: "translateZ(75px)",
+                        transformStyle: "preserve-3d",
                     }}
-                    className="text-center text-2xl font-bold"
-                >
-                    {card.title}
-                </p>
+                    className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg">
+                </div>
+            </motion.div>
+            <div
+                className="bg-gradient-to-br from-indigo-300 to-violet-300 rounded-xl text-center text-2xl font-bold py-2 px-4 flex space-x-4">
+                <p>{card.title}</p>
+
+                <div className="flex justify-center space-x-4">
+                    {card.icons && card.icons.map((icon, index) => (
+                        <button key={index} onClick={() => openLink(card.links[index])} className="flex items-center justify-center">
+                            <img src={`/images/icons/${icon}.png`} alt={icon} className="w-4 h-4" />
+                        </button>
+                    ))}
+                </div>
             </div>
-        </motion.div>
+        </div>
     );
+};
+
+const openLink = (link) => {
+    window.open(link, '_blank'); // Open link in a new tab
 };
 
 export default ProjectCard;
