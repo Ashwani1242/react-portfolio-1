@@ -46,6 +46,8 @@ const ProjectCard = ({ card }) => {
 
     return (
         <div className="space-y-4">
+
+            <p className='lg:text-[32px] md:text-[40px] text-[30px] font-carattere floralwhite nderline'>{card.title}...</p>
             <motion.div
                 key={card.id}
                 ref={ref}
@@ -67,19 +69,13 @@ const ProjectCard = ({ card }) => {
                     className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg">
                 </div>
             </motion.div>
-            {/* <div
-                className="bg-gradient-to-br from-indigo-300 to-violet-300 rounded-xl justify-between items-center text-center text-xl font-bold py-2 px-4 flex">
-                <p>{card.title}</p>
-            </div> */}
             <div
-                className="bg-gradient-to- from-indigo-300 to-violet-300 rounded-xl justify-between items-center text-center text-xl font-bold py- px- flex">
-                <div className="flex justify-center space-x-4">
-                    {card.icons && card.icons.map((icon, index) => (
-                        <button key={index} onClick={() => openLink(card.links[index])} className="flex items-center justify-center bg-white rounded-lg">
-                            <img src={`/images/project_icons/${icon}.svg`} alt={icon} className="w-8 h-8" />
-                        </button>
-                    ))}
-                </div>
+                className=" justify-cente items-center text-nowrap text-xl font-bold flex space-x-4">
+                {card.icons && card.icons.map((icon, index) => (
+                    <button key={index} onClick={() => openLink(card.links[index])} className="flex items-center justify-center bg-white rounded-lg">
+                        <img src={`/images/project_icons/${icon}.svg`} alt={icon} className="w-8 h-8" />
+                    </button>
+                ))}
             </div>
         </div>
     );
