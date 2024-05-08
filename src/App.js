@@ -63,10 +63,14 @@ function App() {
 
   return (
     <div className="">
-      {/* <Navbar /> */}
+      <Navbar cursorHidden={cursorHidden} textLeave={textLeave} />
       <Intro cursorHidden={cursorHidden} tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
       <About />
-      <Projects/>
+      <Projects cursorHidden={cursorHidden} textLeave={textLeave} />
+
+      <div className="h-[400px] flex text-center justify-center items-center text-5xl">
+        Placeholder
+      </div>
 
       <motion.div
         className="mask flex justify-center items-center"

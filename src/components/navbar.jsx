@@ -2,7 +2,7 @@ import React from 'react'
 
 import { motion } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = (props) => {
 
   const fadeLeftVariants = {
     initial: {
@@ -19,6 +19,8 @@ const Navbar = () => {
   return (
     <motion.div 
     variants={fadeLeftVariants}
+    onMouseEnter={props.cursorHidden}
+    onMouseLeave={props.textLeave}
     initial="initial"
     animate="animate"
     transition={{

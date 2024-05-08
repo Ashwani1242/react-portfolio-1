@@ -79,7 +79,7 @@ const Intro = (props) => {
                         className='underline underline-offset-4 cursor-pointer'>
                         ashwanigupta1242@gmail.com
                     </p>
-                    <div
+                    {/* <div
                         className='py-2'>
                         <a
                             href='https://www.linkedin.com/in/ashwani-gupta-802a001b8/'
@@ -99,7 +99,7 @@ const Intro = (props) => {
                             className='underline underline-offset-4 cursor-pointer md:pl-4 pl-2'>
                             playstore
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </motion.div>
             <motion.button

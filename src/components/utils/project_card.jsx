@@ -47,7 +47,7 @@ const ProjectCard = ({ card }) => {
     return (
         <div className="space-y-4">
 
-            <p className='lg:text-[32px] md:text-[40px] text-[30px] font-carattere floralwhite nderline'>{card.title}...</p>
+            <p className='sm:text-[30px] text-[22px] font-cormorant_upright font-semibold floralwhite'>{card.title}...</p>
             <motion.div
                 key={card.id}
                 ref={ref}
@@ -57,7 +57,7 @@ const ProjectCard = ({ card }) => {
                     transformStyle: "preserve-3d",
                     transform,
                 }}
-                className="relative h-96 w-72 sm:h-[480px] sm:w-[360px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
+                className="relative h-96 w-72 sm:h-[480px] sm:w-[360px] rounded-xl bg-gradient-to-br from-[#e4b799] to-violet-300">
                 <div
                     style={{
                         backgroundImage: `url(${card.url})`,
@@ -72,7 +72,7 @@ const ProjectCard = ({ card }) => {
             <div
                 className=" justify-cente items-center text-nowrap text-xl font-bold flex space-x-4">
                 {card.icons && card.icons.map((icon, index) => (
-                    <button key={index} onClick={() => openLink(card.links[index])} className="flex items-center justify-center bg-white rounded-lg">
+                    <button key={index} onClick={() => openLink(card.links[index])} className="flex items-center justify-center bg-white rounded-lg hover:scale-110 transition-all duration-300">
                         <img src={`/images/project_icons/${icon}.svg`} alt={icon} className="w-8 h-8" />
                     </button>
                 ))}

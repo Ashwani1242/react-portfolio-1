@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react'
 import ProjectsBG from './utils/projects_bg'
 import ProjectCard from "./utils/project_card";
 
-const Projects = () => {
+const Projects = (props) => {
 
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -63,12 +63,14 @@ const Projects = () => {
     }
 
     return (
-        <div className=' flex p-1 justify-center bg-floralwhite items-center'>
-
+        <div 
+        onMouseEnter={props.cursorHidden}
+        onMouseLeave={props.textLeave}
+        className=' flex p-1 justify-center bg-floralwhite items-center'>
             <section ref={targetRef} className="relative h-[1000vh] sm:h-[600vh] bg-transparent">
                 <div className="sticky top-0 h-screen bg-neutral-950 flex flex-col justify-around items-center">
 
-                    <svg className="w-full absolute opacity h-full opacity-20" xmlns='http://www.w3.org/2000/svg'>
+                    <svg className="w-full absolute opacity h-full opacity-20 -z-50" xmlns='http://www.w3.org/2000/svg'>
                         <filter id='noiseFilter'>
                             <feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' />
                         </filter>
@@ -92,7 +94,7 @@ const Projects = () => {
                                 duration: 0.3,
                                 delay: 0.6
                             }}
-                            className='lg:text-[50px] md:text-[40px] text-[30px] font-caratter'>
+                            className='lg:text-[50px] md:text-[40px] text-[30px] font-semibold'>
                             Some things I've made so far...
                         </motion.h1>
                     </div>
