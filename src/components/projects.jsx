@@ -115,7 +115,7 @@ export default Projects
 const cards = [
     {
         url: "/images/projects/1.png",
-        title: "Title 1",
+        title: "Conway's Game of Life",
         links: [
             "github link", 
             "playstore link",

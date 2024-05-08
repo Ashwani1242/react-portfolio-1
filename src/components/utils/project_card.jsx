@@ -67,14 +67,16 @@ const ProjectCard = ({ card }) => {
                     className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg">
                 </div>
             </motion.div>
-            <div
-                className="bg-gradient-to-br from-indigo-300 to-violet-300 rounded-xl text-center text-2xl font-bold py-2 px-4 flex space-x-4">
+            {/* <div
+                className="bg-gradient-to-br from-indigo-300 to-violet-300 rounded-xl justify-between items-center text-center text-xl font-bold py-2 px-4 flex">
                 <p>{card.title}</p>
-
+            </div> */}
+            <div
+                className="bg-gradient-to- from-indigo-300 to-violet-300 rounded-xl justify-between items-center text-center text-xl font-bold py- px- flex">
                 <div className="flex justify-center space-x-4">
                     {card.icons && card.icons.map((icon, index) => (
-                        <button key={index} onClick={() => openLink(card.links[index])} className="flex items-center justify-center">
-                            <img src={`/images/icons/${icon}.png`} alt={icon} className="w-4 h-4" />
+                        <button key={index} onClick={() => openLink(card.links[index])} className="flex items-center justify-center bg-white rounded-lg">
+                            <img src={`/images/project_icons/${icon}.svg`} alt={icon} className="w-8 h-8" />
                         </button>
                     ))}
                 </div>
