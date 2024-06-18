@@ -63,14 +63,14 @@ const Projects = (props) => {
     }
 
     return (
-        <div 
-        onMouseEnter={props.cursorHidden}
-        onMouseLeave={props.textLeave}
-        className=' flex p-1 justify-center bg-floralwhite items-center'>
+        <div
+            onMouseEnter={props.cursorHidden}
+            onMouseLeave={props.textLeave}
+            className=' flex p-1 justify-center bg-floralwhite items-center'>
             <section ref={targetRef} className="relative h-[1000vh] sm:h-[600vh] bg-transparent">
-                <div className="sticky top-0 h-screen bg-neutral-950 hover:bg-red-700/80 flex flex-col justify-around items-center duration-300">
-
-                    <svg className="w-full absolute opacity h-full opacity-40 -z-50" xmlns='http://www.w3.org/2000/svg'>
+                <div className="sticky top-0 h-screen bg-neutral-950 flex flex-col justify-around items-center group">
+                    <img src="/images/background.jpg" alt="" className="-z-50 absolute object-cover w-full h-full overflow-auto group-hover:opacity-20 opacity-10 duration-500 group" />
+                    <svg className="w-full absolute opacity h-full opacity-20 -z-50" xmlns='http://www.w3.org/2000/svg'>
                         <filter id='noiseFilter'>
                             <feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' />
                         </filter>
@@ -78,12 +78,12 @@ const Projects = (props) => {
                         <rect width='100%' height='100%' filter='url(#noiseFilter)' />
                     </svg>
 
-                    <div className="floralwhite w-screen md:px-20 px-10 py-10">
+                    <div className="floralwhite w-screen md:px-20 px-8 py-4">
                         <motion.h1
                             initial="hidden"
                             whileInView="visible"
                             variants={fadeUpVariants}
-                            className='font-carattere lg:text-[100px] md:text-[84px] text-[68px] leading-none pb-4'>
+                            className='font-carattere lg:text-[100px] md:text-[84px] text-[68px] leading-none pb-2'>
                             Projects
                         </motion.h1>
                         <motion.h1
@@ -94,7 +94,7 @@ const Projects = (props) => {
                                 duration: 0.3,
                                 delay: 0.6
                             }}
-                            className='lg:text-[50px] md:text-[40px] text-[30px] font-semibold'>
+                            className='lg:text-[50px] md:text-[40px] text-[26px] font-semibold'>
                             Some things I've made so far...
                         </motion.h1>
                     </div>
@@ -119,13 +119,13 @@ const cards = [
         url: "/images/projects/1.png",
         title: "Conway's Game of Life",
         links: [
-            "github link", 
+            "github link",
             "playstore link",
             "web link",
             "itch link"
         ],
         icons: [
-            "github", 
+            "github",
             "playstore",
             "web",
             "itch",
