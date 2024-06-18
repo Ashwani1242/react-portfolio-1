@@ -68,9 +68,9 @@ const Projects = (props) => {
         onMouseLeave={props.textLeave}
         className=' flex p-1 justify-center bg-floralwhite items-center'>
             <section ref={targetRef} className="relative h-[1000vh] sm:h-[600vh] bg-transparent">
-                <div className="sticky top-0 h-screen bg-neutral-950 flex flex-col justify-around items-center">
+                <div className="sticky top-0 h-screen bg-neutral-950 hover:bg-red-700/80 flex flex-col justify-around items-center duration-300">
 
-                    <svg className="w-full absolute opacity h-full opacity-20 -z-50" xmlns='http://www.w3.org/2000/svg'>
+                    <svg className="w-full absolute opacity h-full opacity-40 -z-50" xmlns='http://www.w3.org/2000/svg'>
                         <filter id='noiseFilter'>
                             <feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' />
                         </filter>

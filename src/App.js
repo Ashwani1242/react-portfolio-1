@@ -1,11 +1,13 @@
+import React from 'react'
+
 import About from "./components/about";
 import Intro from "./components/intro";
 import Navbar from "./components/navbar";
+import Projects from "./components/projects";
+import Contact from "./components/contact";
 
-import React from 'react'
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
-import Projects from "./components/projects";
 
 function App() {
 
@@ -67,10 +69,8 @@ function App() {
       <Intro cursorHidden={cursorHidden} tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
       <About />
       <Projects cursorHidden={cursorHidden} textLeave={textLeave} />
+      <Contact></Contact>
 
-      <div className="h-[400px] flex text-center justify-center items-center text-5xl">
-        Placeholder
-      </div>
 
       <motion.div
         className="mask flex justify-center items-center"
