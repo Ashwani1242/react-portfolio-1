@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import ContactForm from "./utils/contact_form";
 
 const Contact = () => {
@@ -29,16 +29,16 @@ const Contact = () => {
     }
 
     return (
-        <div className="">
+        <div className="min-h-screen justify-center items-center flex-col bg-neutral-90">
             <div className="floralwhit w-screen md:px-20 px-10 py-10">
-                        <motion.h1
-                            initial="hidden"
-                            whileInView="visible"
-                            variants={fadeUpVariants}
-                            className='font-carattere lg:text-[100px] md:text-[84px] text-[68px] leading-none pb-4'>
-                            Contact
-                        </motion.h1>
-                        <motion.h1
+                <motion.h1
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={fadeUpVariants}
+                    className='font-carattere lg:text-[100px] md:text-[84px] text-[68px] leading-none pb-4'>
+                    Contact
+                </motion.h1>
+                {/* <motion.h1
                             initial="hidden"
                             whileInView="visible"
                             variants={fadeLeftVariants}
@@ -48,8 +48,8 @@ const Contact = () => {
                             }}
                             className='lg:text-[50px] md:text-[40px] text-[30px] font-semibold'>
                             Looks like you've reached the end...
-                        </motion.h1>
-                    </div>
+                </motion.h1> */}
+            </div>
             <ContactForm />
         </div>
 

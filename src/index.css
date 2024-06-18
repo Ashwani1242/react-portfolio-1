@@ -44,3 +44,8 @@ body {
     background-color: #202020;
 }
 
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
