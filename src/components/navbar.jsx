@@ -2,7 +2,7 @@ import React from 'react'
 
 import { motion } from "framer-motion";
 
-import resume from './resume.pdf'
+import resume from './files/resume.pdf'
 
 const Navbar = (props) => {
 
