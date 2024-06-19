@@ -50,22 +50,22 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="contact-form justify-center items-center flex">
-            <form ref={formRef} action="" onSubmit={onSubmit} className="flex-col p-4 space-y-2">
+        <section className="contact-form justify-center items-center flex pb-10">
+            <form ref={formRef} action="" onSubmit={onSubmit} className="flex-col p-4 space-y-2 bg-white/70 border border-black" >
                 <h2 className="lg:text-[50px] md:text-[40px] text-[30px] font-semibold px-10 mb-4"> Send me an Email! </h2>
                 <div className="input-box">
-                    <label className="font-semibold" > Name </label>
+                    <label className="font-bold text-lg" > Name </label>
                     <input className="h-10 border border-neutral-800 p-2" type="text" placeholder="Your Name..." required name="name" />
                 </div>
                 <div className="input-box">
-                    <label className="font-semibold" > Email </label>
+                    <label className="font-bold text-lg" > Email </label>
                     <input className="h-10 border border-neutral-800 p-2" type="text" placeholder="Your Email..." required name="email" />
                 </div>
                 <div className="input-box">
-                    <label className="font-semibold" > Message </label>
-                    <textarea className="h-32 border border-neutral-800 p-2 mb-4" id="" placeholder="Your Message..." required name="message" ></textarea>
+                    <label className="font-bold text-lg" > Message </label>
+                    <textarea className="h-24 border border-neutral-800 p-2 mb-4" id="" placeholder="Your Message..." required name="message" ></textarea>
                 </div>
-                <button className="h-10 bg-white w-full border border-black relative font-semibold group" type="submit">
+                <button className="text-lg h-10 bg-white w-full border border-black relative font-semibold group" type="submit">
                     <div className="bg-black h-full w-0 flex items-center justify-center group-hover:w-full z-10 duration-1000" />
                     <p className="absolute inset-0 flex items-center justify-center z-10 group-hover:text-white duration-1000"> Send Email </p>
                 </button>
