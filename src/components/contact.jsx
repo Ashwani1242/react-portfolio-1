@@ -30,6 +30,14 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen justify-center items-center flex-col bg-neutral-90">
+            <img src="/images/test.jpg" alt="" className="-z-50 absolute object-cover w-full h-full overflow-auto opacity-90" />
+            <svg className="w-full absolute h-full opacity-50 -z-50" xmlns='http://www.w3.org/2000/svg'>
+                <filter id='noiseFilter'>
+                    <feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' />
+                </filter>
+
+                <rect width='100%' height='100%' filter='url(#noiseFilter)' />
+            </svg>
             <div className="floralwhit w-screen md:px-20 px-10 py-10">
                 <motion.h1
                     initial="hidden"
@@ -39,20 +47,20 @@ const Contact = () => {
                     Contact
                 </motion.h1>
                 <motion.h1
-                            initial="hidden"
-                            whileInView="visible"
-                            variants={fadeLeftVariants}
-                            transition={{
-                                duration: 0.3,
-                                delay: 0.6
-                            }}
-                            className='lg:text-[50px] md:text-[40px] text-[30px] font-semibold'>
-                            Let's get in touch...
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={fadeLeftVariants}
+                    transition={{
+                        duration: 0.3,
+                        delay: 0.6
+                    }}
+                    className='lg:text-[50px] md:text-[40px] text-[30px] font-semibold'>
+                    Let's get in touch...
                 </motion.h1>
             </div>
             <ContactForm />
             <div>
-                
+
             </div>
         </div>
 
