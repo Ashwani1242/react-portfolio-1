@@ -65,7 +65,10 @@ const ContactForm = () => {
                     <label className="font-semibold" > Message </label>
                     <textarea className="h-32 border border-neutral-800 p-2 mb-4" id="" placeholder="Your Message..." required name="message" ></textarea>
                 </div>
-                <button className="h-10 bg-white w-full border border-black p-2 font-semibold" type="submit"> Send Email </button>
+                <button className="h-10 bg-white w-full border border-black relative font-semibold group" type="submit">
+                    <div className="bg-black h-full w-0 flex items-center justify-center group-hover:w-full z-10 duration-1000" />
+                    <p className="absolute inset-0 flex items-center justify-center z-10 group-hover:text-white duration-1000"> Send Email </p>
+                </button>
             </form>
         </section>
     );

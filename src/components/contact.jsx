@@ -38,7 +38,7 @@ const Contact = () => {
                     className='font-carattere lg:text-[100px] md:text-[84px] text-[68px] leading-none pb-4'>
                     Contact
                 </motion.h1>
-                {/* <motion.h1
+                <motion.h1
                             initial="hidden"
                             whileInView="visible"
                             variants={fadeLeftVariants}
@@ -47,10 +47,13 @@ const Contact = () => {
                                 delay: 0.6
                             }}
                             className='lg:text-[50px] md:text-[40px] text-[30px] font-semibold'>
-                            Looks like you've reached the end...
-                </motion.h1> */}
+                            Let's get in touch...
+                </motion.h1>
             </div>
             <ContactForm />
+            <div>
+                
+            </div>
         </div>
 
     );
