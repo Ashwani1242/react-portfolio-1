@@ -17,19 +17,7 @@ const Navbar = (props) => {
       x: 0,
     },
   }
-
-  const fadeRightVariants = {
-    initial: {
-      opacity: 0,
-
-      x: -60,
-    },
-    animate: {
-      opacity: 1,
-      x: 0,
-    },
-  }
-
+  
   return (
     <motion.div
       variants={fadeLeftVariants}
