@@ -39,7 +39,7 @@ const Contact = (props) => {
                 </filter>
                 <rect width='100%' height='100%' filter='url(#noiseFilter)' />
             </svg>
-            <div className="floralwhit w-screen md:px-20 px-10 py-10">
+            <div className="floralwhit w-screen md:px-20 px-10 py-8">
                 <motion.h1
                     initial="hidden"
                     whileInView="visible"
@@ -60,16 +60,13 @@ const Contact = (props) => {
                 </motion.h1>
             </div>
 
-            <ContactForm />
+            <ContactForm cursorHidden={props.cursorHidden} textLeave={props.textLeave} />
 
-            <div className="flex flex-col mt-auto w-full justify-center items-center bg-black/50 pb-12 pt-4 px-20">
+            <div className="flex flex-col mt-auto w-full justify-center items-center bg-black/50 pt-4 md:px-20 px-10">
 
-                <div className="flex justify-between items-center w-full py-6 container">
-                    <Marquee />
-                </div>
 
-                <div className="flex justify-center items-center w-full">
-                    <div className="h-[1px] w-full bg-neutral-200/80 m-2" />
+                <div className="flex justify-center items-center w-full mb-4">
+                    <div className="h-[1px] w-full bg-neutral-200/80" />
                     <motion.h1
                         initial="hidden"
                         whileInView="visible"
@@ -81,10 +78,13 @@ const Contact = (props) => {
                         className='font-carattere floralwhite lg:text-[30px] md:text-[28px] text-[24px] px-4'>
                         Social
                     </motion.h1>
-                    <div className="h-[1px] w-full bg-neutral-200/80 m-2" />
+                    <div className="h-[1px] w-full bg-neutral-200/80" />
                 </div>
 
-                <SocialLinks fadeUpVariants={fadeUpVariants}  cursorHidden={props.cursorHidden} textLeave={props.textLeave}  />
+                <SocialLinks fadeUpVariants={fadeUpVariants} cursorHidden={props.cursorHidden} textLeave={props.textLeave} />
+                <div className="flex justify-between items-center w-full pt-4 container">
+                    <Marquee />
+                </div>
             </div>
         </div>
     );

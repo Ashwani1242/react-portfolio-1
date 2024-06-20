@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Swal from 'sweetalert2'
 import { useRef } from "react";
 
-const ContactForm = () => {
+const ContactForm = (props) => {
 
     const Toast = Swal.mixin({
         toast: true,
@@ -50,7 +50,10 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="contact-form justify-center items-center flex pb-10">
+        <section
+            onMouseEnter={props.cursorHidden}
+            onMouseLeave={props.textLeave}
+            className="contact-form justify-center items-center flex pb-6">
             <form ref={formRef} action="" onSubmit={onSubmit} className="flex-col p-4 space-y-2 bg-white/70 border border-black" >
                 <h2 className="lg:text-[50px] md:text-[40px] text-[30px] font-semibold px-10 mb-4"> Send me an Email! </h2>
                 <div className="input-box">
@@ -65,7 +68,9 @@ const ContactForm = () => {
                     <label className="font-bold text-lg" > Message </label>
                     <textarea className="h-24 border border-neutral-800 p-2 mb-4" id="" placeholder="Your Message..." required name="message" ></textarea>
                 </div>
-                <button className="text-lg h-10 bg-white w-full border border-black relative font-semibold group" type="submit">
+                <button
+                    type="submit"
+                    className="text-lg h-10 bg-white w-full border border-black relative font-semibold group" >
                     <div className="bg-black h-full w-0 flex items-center justify-center group-hover:w-full z-10 duration-1000" />
                     <p className="absolute inset-0 flex items-center justify-center z-10 group-hover:text-white duration-1000"> Send Email </p>
                 </button>

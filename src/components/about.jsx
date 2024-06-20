@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 
-const About = () => {
+const About = (props) => {
 
     const [items] = useState([
         'Flutter',
@@ -137,13 +137,18 @@ const About = () => {
                             variants={skillVariants}
                             className='flex flex-wrap justify-center gap-3'>
                             {items.map((item, index) => (
-                                <motion.p
+                                <motion.a
+                                    href={`https://www.google.com/search?q=${item}`} 
+                                    target="_blank"
                                     key={index}
+                                    onMouseEnter={props.cursorHidden}
+                                    onMouseLeave={props.textLeave}
                                     variants={skillVariants}
-                                    className='bg-floralwhit border-white border px-4 py-2 rounded-lg md:text-lg text-sm font-semibold items-center justify-center flex'>
-                                    <img src={`/images/skill_icons/${item}.svg`} alt="Icon" className="w-6 h-6 mr-3" />
-                                    {item}
-                                </motion.p>
+                                    className='border-white border px-4 py-2 cursor-pointer md:text-lg text-sm font-semibold items-center justify-center flex group relative'>
+                                    <img src={`/images/skill_icons/${item}.svg`} alt="Icon" className="w-6 h-6 mr-3 z-20" />
+                                    <p className='z-20 group-hover:text-black duration-500'>{item}</p>
+                                    <div className='absolute inset-0 bg-floralwhite w-0 group-hover:w-full z-10 duration-500'></div>
+                                </motion.a>
                             ))}
                         </motion.div>
                     </div>
@@ -181,7 +186,7 @@ const About = () => {
                                 </motion.li>
                             </motion.ol>
                         </div>
-                        <div className='w-full h-[1px] bg-neutral-500 lg:hidden block'/>
+                        <div className='w-full h-[1px] bg-neutral-500 lg:hidden block' />
                         <div className='py-12 sm:px-12 px-6'>
                             <motion.h1
                                 initial="hidden"

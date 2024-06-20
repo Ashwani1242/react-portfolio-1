@@ -8,13 +8,14 @@ const Marquee = () => {
         '2024',
         'Lucknow, India',
         '2024',
+        'ashwanigupta1242@gmail.com',
     ]
 
     const time = 30
 
     return (
-        <div className='container mx-auto overflow-x-hidden h-20 overflow-y-hidden'>
-            <div className="flex my-gradient">
+        <div className='container mx-auto overflow-x-hidden overflow-y-hidden'>
+            <div className="flex my-gradient font-italiana text-md text-nowrap floralwhite">
                 <motion.div
                     initial={{
                         x: 0
@@ -29,7 +30,7 @@ const Marquee = () => {
                     }}
                     className="marquee flex flex-shrink-0">
                     {marqueeElements.map((String, index) => {
-                        return <div className='font-italiana lg:text-[60px] md:text-[56px] text-[48px] leading-none pr-72 text-nowrap floralwhite' key={index}> {String} </div>
+                        return <div className='md:pr-56 pr-20' key={index}> {String} </div>
                     })}
                 </motion.div>
                 <motion.div
@@ -46,7 +47,7 @@ const Marquee = () => {
                     }}
                     className="marquee flex flex-shrink-0">
                     {marqueeElements.map((String, index) => {
-                        return <div className='font-italiana lg:text-[60px] md:text-[56px] text-[48px] leading-none pr-72 text-nowrap floralwhite' key={index}> {String} </div>
+                        return <div className='md:pr-56 pr-20' key={index}> {String} </div>
                     })}
                 </motion.div>
             </div>

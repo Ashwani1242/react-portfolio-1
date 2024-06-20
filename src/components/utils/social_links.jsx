@@ -3,9 +3,16 @@ import { motion } from 'framer-motion'
 
 const SocialLinks = (props) => {
 
-    const links = [
-
-    ]
+    const socialVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                staggerChildren: 0.1,
+            },
+        },
+    };
 
     return (
         <div>
@@ -21,42 +28,30 @@ const SocialLinks = (props) => {
                     delay: 0.6,
                 }}
                 className='flex text-lg pt-4'>
-                <ul className='flex space-x-[1px] bg-black border border-black w-min font-semibold'>
-                    {zones.map((link, index) => {
+                <motion.ul
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={socialVariants}
+                    className='flex flex-wrap justify-center gap-3 w-full font-semibold'>
+                    {links.map((link, index) => {
                         return (
-                            <a href={link.url} target='_blank' key={index} className='bg-white cursor-pointer group relative py-2 px-4 text-nowrap '>
-                                <div className='relative w-8 h-8 rounded-md bg-blac inset-0 flex items-center justify-center z-20'>
-                                    <img src={link.icon} alt='Icon' className='w-6 h-6 mix-blend-exclusion' />
-                                    <span className="absolute opacity-0 group-hover:opacity-100 group-hover:text-white group-hover:text-md group-hover:-translate-y-10 duration-700">
+                            <motion.a
+                                variants={socialVariants}
+                                href={link.url}
+                                target='_blank'
+                                key={index}
+                                className='bg-white/50 border border-white cursor-pointer group relative py-2 px-6 text-nowrap '>
+                                <div className='relative w-8 h-8 rounded-md bg-whit inset-0 flex items-center justify-center z-20'>
+                                    <img src={link.icon} alt='Icon' className='w-6 h-6' />
+                                    <span className="absolute opacity-0 group-hover:opacity-100 group-hover:text-white group-hover:text-md group-hover:-translate-y-12 duration-700">
                                         {link.title}
                                     </span>
                                 </div>
-                                <div className='absolute inset-0 bg-black w-0 group-hover:w-full z-10 duration-500'></div>
-                            </a>
+                                <div className='absolute inset-0 bg-white w-0 group-hover:w-full z-10 duration-500'></div>
+                            </motion.a>
                         );
                     })}
-
-                    {/* <li className='bg-white cursor-pointer group relative py-2 px-4'>
-                        <a href='' className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> Intro
-                            <span class="absolute opacity-0 group-hover:opacity-100 group-hover:text-white group-hover:text-md group-hover:-translate-y-10 duration-700" >
-                                GitHub
-                            </span>
-                        </a>
-                        <div className='absolute inset-0 bg-black w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-                    </li>
-                    <li className='bg-white cursor-pointer group relative py-2 px-4'>
-                        <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> About </p>
-                        <div className='absolute inset-0 bg-black w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-                    </li>
-                    <li className='bg-white cursor-pointer group relative py-2 px-4'>
-                        <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> Projects </p>
-                        <div className='absolute inset-0 bg-black w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-                    </li>
-                    <li className='bg-white cursor-pointer group relative py-2 px-4'>
-                        <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> Contact </p>
-                        <div className='absolute inset-0 bg-black w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-                    </li> */}
-                </ul>
+                </motion.ul>
             </motion.div>
         </div>
     )
@@ -64,7 +59,7 @@ const SocialLinks = (props) => {
 
 export default SocialLinks
 
-const zones = [
+const links = [
     {
         url: "https://github.com/Ashwani1242",
         title: "Github",

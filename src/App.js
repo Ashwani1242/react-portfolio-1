@@ -67,7 +67,7 @@ function App() {
     <div className="">
       <Navbar cursorHidden={cursorHidden} textLeave={textLeave} />
       <Intro cursorHidden={cursorHidden} tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
-      <About />
+      <About cursorHidden={cursorHidden} textLeave={textLeave} />
       <Projects cursorHidden={cursorHidden} textLeave={textLeave} />
       <Contact cursorHidden={cursorHidden} textLeave={textLeave} />
 
