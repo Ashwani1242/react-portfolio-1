@@ -18,8 +18,6 @@ const SocialLinks = (props) => {
         <div>
             <motion.div
                 variants={props.fadeUpVariants}
-                onMouseEnter={props.cursorHidden}
-                onMouseLeave={props.textLeave}
                 initial="initial"
                 animate="animate"
                 transition={{

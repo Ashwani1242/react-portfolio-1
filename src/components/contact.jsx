@@ -64,7 +64,10 @@ const Contact = (props) => {
 
             <ContactForm cursorHidden={props.cursorHidden} textLeave={props.textLeave} />
 
-            <div className="flex flex-col mt-auto w-full justify-center items-center bg-black/50 pt-4 md:px-20 px-10">
+            <div
+                onMouseEnter={props.cursorHidden}
+                onMouseLeave={props.textLeave}
+                className="flex flex-col mt-auto w-full justify-center items-center bg-black/50 pt-4 md:px-20 px-10">
 
 
                 <div className="flex justify-center items-center w-full mb-4">
@@ -83,7 +86,7 @@ const Contact = (props) => {
                     <div className="h-[1px] w-full bg-neutral-200/80" />
                 </div>
 
-                <SocialLinks fadeUpVariants={fadeUpVariants} cursorHidden={props.cursorHidden} textLeave={props.textLeave} />
+                <SocialLinks fadeUpVariants={fadeUpVariants} />
                 <div className="flex justify-between items-center w-full pt-4 container">
                     <Marquee />
                 </div>
