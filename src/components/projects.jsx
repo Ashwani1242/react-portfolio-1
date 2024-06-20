@@ -1,7 +1,6 @@
 
-import { motion, useTransform, useScroll, delay } from "framer-motion";
-import React, { useState, useRef } from 'react'
-import ProjectsBG from './utils/projects_bg'
+import { motion, useTransform, useScroll } from "framer-motion";
+import React, { useRef } from 'react';
 import ProjectCard from "./utils/project_card";
 
 const Projects = (props) => {

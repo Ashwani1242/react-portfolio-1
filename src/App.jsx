@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from 'react';
 import About from "./components/about";
 import Intro from "./components/intro";
 import Navbar from "./components/navbar";
@@ -202,18 +201,15 @@ function App() {
         fadeLeftVariant={fadeLeftVariant}
       />
 
-
       <motion.div
         className="mask flex justify-center items-center"
         style={{
           translateX: cursorXSpring,
           translateY: cursorYSpring,
         }}
-
         variants={variants}
         animate={cursorVariant}
-      >
-      </motion.div>
+      />
     </div>
   );
 }

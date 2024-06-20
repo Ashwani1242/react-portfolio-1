@@ -1,6 +1,5 @@
-import React from 'react'
+import React from 'react';
 import IntroBG from "./utils/intro_bg";
-
 import { motion } from "framer-motion";
 import { Link } from 'react-scroll';
 
