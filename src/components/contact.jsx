@@ -53,16 +53,16 @@ const Contact = (props) => {
                     initial="hidden"
                     whileInView="visible"
                     variants={fadeLeftVariants}
-                    transition={{
-                        duration: 0.3,
-                        delay: 0.6
-                    }}
                     className='lg:text-[50px] md:text-[40px] text-[30px] font-semibold'>
                     Let's get in touch...
                 </motion.h1>
             </div>
-
-            <ContactForm cursorHidden={props.cursorHidden} textLeave={props.textLeave} />
+            <motion.div
+                variants={fadeUpVariants}
+                initial="hidden"
+                whileInView="visible">
+                <ContactForm cursorHidden={props.cursorHidden} textLeave={props.textLeave} fadeUpVariants={fadeUpVariants} />
+            </motion.div>
 
             <div
                 onMouseEnter={props.cursorHidden}
@@ -85,7 +85,6 @@ const Contact = (props) => {
                     </motion.h1>
                     <div className="h-[1px] w-full bg-neutral-200/80" />
                 </div>
-
                 <SocialLinks fadeUpVariants={fadeUpVariants} />
                 <div className="flex justify-between items-center w-full pt-4 container">
                     <Marquee />

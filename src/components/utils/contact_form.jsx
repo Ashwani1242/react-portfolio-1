@@ -54,7 +54,8 @@ const ContactForm = (props) => {
             onMouseEnter={props.cursorHidden}
             onMouseLeave={props.textLeave}
             className="contact-form justify-center items-center flex pb-6">
-            <form ref={formRef} action="" onSubmit={onSubmit} className="flex-col p-4 space-y-2 bg-white/70 border border-black" >
+            <form
+                ref={formRef} action="" onSubmit={onSubmit} className="flex-col p-4 space-y-2 bg-white/70 border border-black" >
                 <h2 className="lg:text-[50px] md:text-[40px] text-[30px] font-semibold px-10 mb-4"> Send me an Email! </h2>
                 <div className="input-box">
                     <label className="font-bold text-lg" > Name </label>
