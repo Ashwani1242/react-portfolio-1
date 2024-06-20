@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import ContactForm from "./utils/contact_form";
+import Marquee from "./utils/marquee";
 
 const Contact = () => {
 
@@ -61,8 +62,11 @@ const Contact = () => {
             <ContactForm />
 
             <div className="flex flex-col mt-auto w-full justify-center items-center bg-black/50 pb-12 pt-4 px-20">
-                <div className="flex justify-between items-center w-full py-6">
-                    <motion.div
+
+
+                <div className="flex justify-between items-center w-full py-6 container">
+                    <Marquee />
+                    {/* <motion.div
                         initial="hidden"
                         whileInView="visible"
                         variants={fadeUpVariants}
@@ -82,7 +86,7 @@ const Contact = () => {
                         variants={fadeUpVariants}
                         className='font-italiana lg:text-[60px] md:text-[56px] text-[48px] leading-none p-2 floralwhite'>
                         Lucknow, India
-                    </motion.div>
+                    </motion.div> */}
                 </div>
                 <div className="flex justify-center items-center w-full">
                     <div className="h-[1px] w-full bg-neutral-200/80 m-2" />
