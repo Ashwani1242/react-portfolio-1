@@ -69,7 +69,7 @@ function App() {
       <Intro cursorHidden={cursorHidden} tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
       <About />
       <Projects cursorHidden={cursorHidden} textLeave={textLeave} />
-      <Contact></Contact>
+      <Contact cursorHidden={cursorHidden} textLeave={textLeave} />
 
 
       <motion.div

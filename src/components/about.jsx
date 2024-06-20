@@ -140,7 +140,7 @@ const About = () => {
                                 <motion.p
                                     key={index}
                                     variants={skillVariants}
-                                    className='bg-floralwhit border-white border text-blac px-4 py-2 rounded-lg md:text-lg text-sm font-semibold items-center justify-center flex'>
+                                    className='bg-floralwhit border-white border px-4 py-2 rounded-lg md:text-lg text-sm font-semibold items-center justify-center flex'>
                                     <img src={`/images/skill_icons/${item}.svg`} alt="Icon" className="w-6 h-6 mr-3" />
                                     {item}
                                 </motion.p>

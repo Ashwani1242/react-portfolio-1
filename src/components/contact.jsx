@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import ContactForm from "./utils/contact_form";
 import Marquee from "./utils/marquee";
+import SocialLinks from "./utils/social_links";
 
-const Contact = () => {
+const Contact = (props) => {
 
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 40 },
@@ -63,31 +64,10 @@ const Contact = () => {
 
             <div className="flex flex-col mt-auto w-full justify-center items-center bg-black/50 pb-12 pt-4 px-20">
 
-
                 <div className="flex justify-between items-center w-full py-6 container">
                     <Marquee />
-                    {/* <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        variants={fadeUpVariants}
-                        className='font-italiana lg:text-[60px] md:text-[56px] text-[48px] leading-none p-2 floralwhite'>
-                        Ashwani Gupta
-                    </motion.div>
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        variants={fadeUpVariants}
-                        className='font-italiana lg:text-[60px] md:text-[56px] text-[48px] leading-none p-2 floralwhite'>
-                        2024
-                    </motion.div>
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        variants={fadeUpVariants}
-                        className='font-italiana lg:text-[60px] md:text-[56px] text-[48px] leading-none p-2 floralwhite'>
-                        Lucknow, India
-                    </motion.div> */}
                 </div>
+
                 <div className="flex justify-center items-center w-full">
                     <div className="h-[1px] w-full bg-neutral-200/80 m-2" />
                     <motion.h1
@@ -103,37 +83,8 @@ const Contact = () => {
                     </motion.h1>
                     <div className="h-[1px] w-full bg-neutral-200/80 m-2" />
                 </div>
-                <motion.div
-                    variants={fadeUpVariants}
-                    // onMouseEnter={props.cursorHidden}
-                    // onMouseLeave={props.textLeave}
-                    initial="initial"
-                    animate="animate"
-                    transition={{
-                        duration: .4,
-                        ease: "easeOut",
-                        delay: 0.6,
-                    }}
-                    className='flex text-lg pt-4'>
-                    <ul className='flex space-x-[1px] bg-black border border-black w-min font-semibold'>
-                        <li className='bg-white cursor-pointer group relative py-2 px-4'>
-                            <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> Intro </p>
-                            <div className='absolute inset-0 bg-black w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-                        </li>
-                        <li className='bg-white cursor-pointer group relative py-2 px-4'>
-                            <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> About </p>
-                            <div className='absolute inset-0 bg-black w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-                        </li>
-                        <li className='bg-white cursor-pointer group relative py-2 px-4'>
-                            <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> Projects </p>
-                            <div className='absolute inset-0 bg-black w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-                        </li>
-                        <li className='bg-white cursor-pointer group relative py-2 px-4'>
-                            <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> Contact </p>
-                            <div className='absolute inset-0 bg-black w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-                        </li>
-                    </ul>
-                </motion.div>
+
+                <SocialLinks fadeUpVariants={fadeUpVariants}  cursorHidden={props.cursorHidden} textLeave={props.textLeave}  />
             </div>
         </div>
     );

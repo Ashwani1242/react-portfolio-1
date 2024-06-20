@@ -17,7 +17,7 @@ const Navbar = (props) => {
       x: 0,
     },
   }
-  
+
   return (
     <motion.div
       variants={fadeLeftVariants}
