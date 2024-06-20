@@ -63,13 +63,144 @@ function App() {
   const textLeave = () => setCursorVariant("default")
   const cursorHidden = () => setCursorVariant("hidden")
 
+  const staggerVariant = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const fadeLeftVariant = {
+    initial: {
+      opacity: 0,
+
+      x: 60,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+    },
+    hidden: {
+      opacity: 0,
+      x: 60
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        staggerChildren: 0.3,
+        duration: 0.5,
+      },
+    },
+  }
+
+
+  const fadeRightVariant = {
+    pageStart: {
+      opacity: 0,
+      x: -40,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+    },
+    hidden: {
+      opacity: 0,
+      x: -60
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        staggerChildren: 0.3,
+        duration: 0.5,
+      },
+    },
+  }
+
+  const fadeUpVariant = {
+    pageStart: {
+      opacity: 0,
+      y: 40,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+    hidden: {
+      opacity: 0,
+      y: 40
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        delay: 0.2
+      }
+    }
+  }
+
+  const fadeDownVariant = {
+    hidden: { opacity: 0, y: -40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.4
+      }
+    }
+  }
+
+
   return (
     <div className="">
-      <Navbar cursorHidden={cursorHidden} textLeave={textLeave} />
-      <Intro cursorHidden={cursorHidden} tirtiaryTextEnter={tirtiaryTextEnter} secondaryTextEnter={secondaryTextEnter} primaryTextEnter={primaryTextEnter} textLeave={textLeave} />
-      <About cursorHidden={cursorHidden} textLeave={textLeave} />
-      <Projects cursorHidden={cursorHidden} textLeave={textLeave} />
-      <Contact cursorHidden={cursorHidden} textLeave={textLeave} />
+
+      <Navbar
+        cursorHidden={cursorHidden}
+        textLeave={textLeave}
+        fadeLeftVariant={fadeLeftVariant}
+      />
+
+      <Intro
+        cursorHidden={cursorHidden}
+        tirtiaryTextEnter={tirtiaryTextEnter}
+        secondaryTextEnter={secondaryTextEnter}
+        primaryTextEnter={primaryTextEnter}
+        textLeave={textLeave}
+        fadeUpVariant={fadeUpVariant}
+        fadeRightVariant={fadeRightVariant}
+      />
+
+      <About
+        cursorHidden={cursorHidden}
+        textLeave={textLeave}
+        staggerVariant={staggerVariant}
+        fadeUpVariant={fadeUpVariant}
+        fadeDownVariant={fadeDownVariant}
+        fadeLeftVariant={fadeLeftVariant}
+        fadeRightVariant={fadeRightVariant}
+      />
+
+      <Projects
+        cursorHidden={cursorHidden}
+        textLeave={textLeave}
+        fadeUpVariant={fadeUpVariant}
+        fadeLeftVariant={fadeLeftVariant}
+      />
+
+      <Contact
+        cursorHidden={cursorHidden}
+        textLeave={textLeave}
+        staggerVariant={staggerVariant}
+        fadeUpVariant={fadeUpVariant}
+        fadeLeftVariant={fadeLeftVariant}
+      />
 
 
       <motion.div
@@ -82,7 +213,6 @@ function App() {
         variants={variants}
         animate={cursorVariant}
       >
-        {/* <div className="h-[8px] w-[8px] bg-red-400 rotate-12 rounded-full" /> */}
       </motion.div>
     </div>
   );

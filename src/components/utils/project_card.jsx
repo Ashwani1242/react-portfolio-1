@@ -82,7 +82,7 @@ const ProjectCard = ({ card }) => {
 };
 
 const openLink = (link) => {
-    window.open(link, '_blank'); // Open link in a new tab
+    window.open(link, '_blank');
 };
 
 export default ProjectCard;

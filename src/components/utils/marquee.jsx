@@ -17,12 +17,8 @@ const Marquee = () => {
         <div className='container mx-auto overflow-x-hidden overflow-y-hidden'>
             <div className="flex my-gradient font-italiana text-md text-nowrap floralwhite">
                 <motion.div
-                    initial={{
-                        x: 0
-                    }}
-                    animate={{
-                        x: '-100%'
-                    }}
+                    initial={{ x: 0 }}
+                    animate={{ x: '-100%' }}
                     transition={{
                         duration: time,
                         repeat: Infinity,
@@ -34,12 +30,8 @@ const Marquee = () => {
                     })}
                 </motion.div>
                 <motion.div
-                    initial={{
-                        x: 0
-                    }}
-                    animate={{
-                        x: '-100%'
-                    }}
+                    initial={{ x: 0 }}
+                    animate={{ x: '-100%' }}
                     transition={{
                         duration: time,
                         repeat: Infinity,

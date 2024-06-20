@@ -13,55 +13,6 @@ const Projects = (props) => {
 
     const x = useTransform(scrollYProgress, [0, 1], ["54%", "-45%"]);
 
-    const fadeUpVariants = {
-        hidden: { opacity: 0, y: 40 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.3,
-                delay: 0.2
-            }
-        }
-    }
-
-    const fadeDownVariants = {
-        hidden: { opacity: 0, y: -40 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                delay: 0.4
-            }
-        }
-    }
-
-    const fadeRightVariants = {
-        hidden: { opacity: 0, x: -60 },
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                staggerChildren: 0.3,
-                duration: 0.5,
-            },
-        }
-    }
-
-    const fadeLeftVariants = {
-        hidden: { opacity: 0, x: 60 },
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                staggerChildren: 0.3,
-                duration: 0.5,
-                delay: 0.2,
-            },
-        }
-    }
-
     return (
         <section
             id="projects-section"
@@ -83,18 +34,14 @@ const Projects = (props) => {
                         <motion.h1
                             initial="hidden"
                             whileInView="visible"
-                            variants={fadeUpVariants}
+                            variants={props.fadeUpVariant}
                             className='font-carattere lg:text-[100px] md:text-[84px] text-[68px] leading-none pb-2'>
                             Projects
                         </motion.h1>
                         <motion.h1
                             initial="hidden"
                             whileInView="visible"
-                            variants={fadeLeftVariants}
-                            transition={{
-                                duration: 0.3,
-                                delay: 0.6
-                            }}
+                            variants={props.fadeLeftVariant}
                             className='lg:text-[50px] md:text-[40px] text-[26px] font-semibold'>
                             Some things I've made so far...
                         </motion.h1>

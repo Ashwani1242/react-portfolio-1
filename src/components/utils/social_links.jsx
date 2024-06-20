@@ -2,39 +2,19 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const SocialLinks = (props) => {
-
-    const socialVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
-
     return (
         <div>
             <motion.div
-                variants={props.fadeUpVariants}
-                initial="initial"
-                animate="animate"
-                transition={{
-                    duration: .4,
-                    ease: "easeOut",
-                    delay: 0.6,
-                }}
                 className='flex text-lg pt-4'>
                 <motion.ul
                     initial="hidden"
                     whileInView="visible"
-                    variants={socialVariants}
+                    variants={props.staggerVariant}
                     className='flex flex-wrap justify-center gap-3 w-full font-semibold'>
                     {links.map((link, index) => {
                         return (
                             <motion.a
-                                variants={socialVariants}
+                            variants={props.staggerVariant}
                                 href={link.url}
                                 target='_blank'
                                 key={index}

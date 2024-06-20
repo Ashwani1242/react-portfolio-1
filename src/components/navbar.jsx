@@ -4,22 +4,9 @@ import { Link } from 'react-scroll';
 import resume from './files/resume.pdf'
 
 const Navbar = (props) => {
-
-  const fadeLeftVariants = {
-    initial: {
-      opacity: 0,
-
-      x: 60,
-    },
-    animate: {
-      opacity: 1,
-      x: 0,
-    },
-  }
-
   return (
     <motion.div
-      variants={fadeLeftVariants}
+      variants={props.fadeLeftVariant}
       onMouseEnter={props.cursorHidden}
       onMouseLeave={props.textLeave}
       initial="initial"

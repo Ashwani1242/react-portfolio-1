@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Swal from 'sweetalert2'
 import { useRef } from "react";
 

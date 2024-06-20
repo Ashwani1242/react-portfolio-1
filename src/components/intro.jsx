@@ -5,37 +5,14 @@ import { motion } from "framer-motion";
 import { Link } from 'react-scroll';
 
 const Intro = (props) => {
-
-    const fadeUpVariants = {
-        initial: {
-            opacity: 0,
-            y: 40,
-        },
-        animate: {
-            opacity: 1,
-            y: 0,
-        },
-    }
-
-    const fadeRightVariants = {
-        initial: {
-            opacity: 0,
-            x: -40,
-        },
-        animate: {
-            opacity: 1,
-            x: 0,
-        },
-    }
-
     return (
         <section
             id='intro-section'
             className='flex flex-col justify-center items-center h-screen max-h-[1080px]'>
             <IntroBG />
             <motion.div
-                variants={fadeUpVariants}
-                initial="initial"
+                variants={props.fadeUpVariant}
+                initial="pageStart"
                 animate="animate"
                 transition={{
                     duration: .4,
@@ -62,8 +39,8 @@ const Intro = (props) => {
                 </p>
             </motion.div>
             <motion.div
-                variants={fadeRightVariants}
-                initial="initial"
+                variants={props.fadeRightVariant}
+                initial="pageStart"
                 animate="animate"
                 transition={{
                     duration: .4,
@@ -85,8 +62,8 @@ const Intro = (props) => {
                 </div>
             </motion.div>
             <motion.div
-                variants={fadeUpVariants}
-                initial="initial"
+                variants={props.fadeUpVariant}
+                initial="pageStart"
                 animate="animate"
                 transition={{
                     duration: 0.2,
@@ -108,6 +85,3 @@ const Intro = (props) => {
 }
 
 export default Intro
-
-
-//supergit commit baby

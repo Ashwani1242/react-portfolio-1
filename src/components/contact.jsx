@@ -4,32 +4,6 @@ import Marquee from "./utils/marquee";
 import SocialLinks from "./utils/social_links";
 
 const Contact = (props) => {
-
-    const fadeUpVariants = {
-        hidden: { opacity: 0, y: 40 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.3,
-                delay: 0.2
-            }
-        }
-    }
-
-    const fadeLeftVariants = {
-        hidden: { opacity: 0, x: 60 },
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                staggerChildren: 0.3,
-                duration: 0.5,
-                delay: 0.2,
-            },
-        }
-    }
-
     return (
         <section
             id="contact-section"
@@ -45,23 +19,23 @@ const Contact = (props) => {
                 <motion.h1
                     initial="hidden"
                     whileInView="visible"
-                    variants={fadeUpVariants}
+                    variants={props.fadeUpVariant}
                     className='font-carattere lg:text-[100px] md:text-[84px] text-[68px] leading-none pb-2'>
                     Contact
                 </motion.h1>
                 <motion.h1
                     initial="hidden"
                     whileInView="visible"
-                    variants={fadeLeftVariants}
+                    variants={props.fadeLeftVariant}
                     className='lg:text-[50px] md:text-[40px] text-[30px] font-semibold'>
                     Let's get in touch...
                 </motion.h1>
             </div>
             <motion.div
-                variants={fadeUpVariants}
+                variants={props.fadeUpVariant}
                 initial="hidden"
                 whileInView="visible">
-                <ContactForm cursorHidden={props.cursorHidden} textLeave={props.textLeave} fadeUpVariants={fadeUpVariants} />
+                <ContactForm cursorHidden={props.cursorHidden} textLeave={props.textLeave} />
             </motion.div>
 
             <div
@@ -75,17 +49,13 @@ const Contact = (props) => {
                     <motion.h1
                         initial="hidden"
                         whileInView="visible"
-                        variants={fadeUpVariants}
-                        transition={{
-                            duration: 0.3,
-                            delay: 0.6
-                        }}
+                        variants={props.fadeUpVariant}
                         className='font-carattere floralwhite lg:text-[30px] md:text-[28px] text-[24px] px-4'>
                         Social
                     </motion.h1>
                     <div className="h-[1px] w-full bg-neutral-200/80" />
                 </div>
-                <SocialLinks fadeUpVariants={fadeUpVariants} />
+                <SocialLinks fadeUpVariant={props.fadeUpVariant} staggerVariant={props.staggerVariant} />
                 <div className="flex justify-between items-center w-full pt-4 container">
                     <Marquee />
                 </div>
