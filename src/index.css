@@ -73,3 +73,20 @@ body {
         rgba(0, 0, 0, 0)
     );
 }
+
+.navbar-active{
+    background-color: black;
+    color: white !important;
+    transition-duration: 500ms;
+}
+
+/* Define styles for the active class */
+.active .absolute {
+    width: 100% !important; /* Change the width to full when active */
+  }
+  
+  /* Other existing styles */
+  .relative.inset-0 {
+    transition: width 0.5s ease;
+  }
+  

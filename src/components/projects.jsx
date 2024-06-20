@@ -63,7 +63,8 @@ const Projects = (props) => {
     }
 
     return (
-        <div
+        <section
+            id="projects-section"
             onMouseEnter={props.cursorHidden}
             onMouseLeave={props.textLeave}
             className=' flex p-1 justify-center bg-floralwhite items-center'>
@@ -106,7 +107,7 @@ const Projects = (props) => {
                 </div>
             </section>
 
-        </div>
+        </section>
     )
 }
 

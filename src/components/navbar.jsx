@@ -1,7 +1,6 @@
 import React from 'react'
-
 import { motion } from "framer-motion";
-
+import { Link } from 'react-scroll';
 import resume from './files/resume.pdf'
 
 const Navbar = (props) => {
@@ -32,22 +31,26 @@ const Navbar = (props) => {
       }}
       className='flex md:p-2 top-2 right-2 text-lg fixed z-50'>
       <ul className='md:flex md:space-x-[1px] md:space-y-0 space-y-[1px] bg-black border border-black w-min font-semibold'>
-        <li className='bg-white cursor-pointer group relative py-2 px-4'>
+        <Link to='intro-section' smooth={true} duration={1000} spy={true} activeClass="navbar-active" className='bg-white cursor-pointer group relative py-2 px-4'>
           <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> Intro </p>
           <div className='absolute inset-0 bg-black h-full w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-        </li>
-        <li className='bg-white cursor-pointer group relative py-2 px-4'>
+        </Link>
+
+        <Link to='about-section' smooth={true} duration={1000} spy={true} activeClass="navbar-active" className='bg-white cursor-pointer group relative py-2 px-4'>
           <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> About </p>
           <div className='absolute inset-0 bg-black h-full w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-        </li>
-        <li className='bg-white cursor-pointer group relative py-2 px-4'>
+        </Link>
+
+        <Link to='projects-section' smooth={true} duration={1000} spy={true} activeClass="navbar-active" className='bg-white cursor-pointer group relative py-2 px-4'>
           <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> Projects </p>
           <div className='absolute inset-0 bg-black h-full w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-        </li>
-        <li className='bg-white cursor-pointer group relative py-2 px-4'>
+        </Link>
+
+        <Link to='contact-section' smooth={true} duration={1000} spy={true} activeClass="navbar-active" className='bg-white cursor-pointer group relative py-2 px-4'>
           <p className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'> Contact </p>
           <div className='absolute inset-0 bg-black h-full w-0 flex items-center justify-center group-hover:w-full z-10 duration-500'> </div>
-        </li>
+        </Link>
+
         <li className='bg-white cursor-pointer group relative py-2 px-4'>
           <a href={resume} download='resume' className='relative inset-0 flex items-center justify-center z-20 group-hover:text-white duration-500'>
             Resume
@@ -63,3 +66,4 @@ const Navbar = (props) => {
 }
 
 export default Navbar
+

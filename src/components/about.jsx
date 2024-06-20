@@ -86,7 +86,8 @@ const About = (props) => {
     }
 
     return (
-        <div
+        <section
+            id='about-section'
             className='about-background floralwhite md:p-28 p-10'>
             <div>
                 <div>
@@ -138,7 +139,7 @@ const About = (props) => {
                             className='flex flex-wrap justify-center gap-3'>
                             {items.map((item, index) => (
                                 <motion.a
-                                    href={`https://www.google.com/search?q=${item}`} 
+                                    href={`https://www.google.com/search?q=${item}`}
                                     target="_blank"
                                     key={index}
                                     onMouseEnter={props.cursorHidden}
@@ -229,7 +230,7 @@ const About = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

@@ -31,7 +31,9 @@ const Contact = (props) => {
     }
 
     return (
-        <div className="min-h-screen justify-around items-center flex flex-col bg-neutral-90 relative">
+        <section
+            id="contact-section"
+            className="min-h-screen justify-around items-center flex flex-col bg-neutral-90 relative">
             <img src="/images/test.jpg" alt="" className="-z-50 absolute object-cover w-full h-full overflow-auto opacity-80" />
             <svg className="w-full absolute h-full opacity-50 -z-50" xmlns='http://www.w3.org/2000/svg'>
                 <filter id='noiseFilter'>
@@ -86,7 +88,7 @@ const Contact = (props) => {
                     <Marquee />
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
