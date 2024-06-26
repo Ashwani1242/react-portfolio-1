@@ -55,7 +55,7 @@ const Intro = (props) => {
                         className=''>Ashwani Gupta
                     </p>
                     <p
-                        className='underline underline-offset-4 cursor-pointer'>
+                        className='underline decoration-neutral-500 underline-offset-4 cursor-pointer'>
                         ashwanigupta1242@gmail.com
                     </p>
                 </div>
@@ -78,7 +78,6 @@ const Intro = (props) => {
                     <div className='h-[24px] w-[24px] bg-black rounded-full animate-bounce group-hover:animate-ping' />
                 </Link>
             </motion.div>
-
         </section>
     )
 }

@@ -30,7 +30,7 @@ body {
 .mask {
     mask-image: url("../public/mask.svg");
     background-color: #07897f;
-    position: absolute;
+    position: fixed;
     width: 100px;
     height: 100px;
     top: 0px;
@@ -78,6 +78,22 @@ body {
     color: white ;
     transition-duration: 500ms;
     transition: all;
+}
+
+
+.large-circle, .small-circle {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    background-color: red;
+    z-index: 100;
+}
+
+.small-circle {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: blue;
 }
 
   

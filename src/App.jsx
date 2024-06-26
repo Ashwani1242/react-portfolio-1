@@ -4,6 +4,7 @@ import Intro from "./components/intro";
 import Navbar from "./components/navbar";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
+import Cursor from './components/utils/cursor';
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -29,7 +30,7 @@ function App() {
     };
   }, []);
 
-  const variants = {
+  const mouseVariants = {
     default: {
       mixBlendMode: "exclusion"
     },
@@ -97,7 +98,6 @@ function App() {
     },
   }
 
-
   const fadeRightVariant = {
     pageStart: {
       opacity: 0,
@@ -159,6 +159,8 @@ function App() {
 
   return (
     <div className="">
+      
+      <Cursor />
 
       <Navbar
         cursorHidden={cursorHidden}
@@ -201,15 +203,16 @@ function App() {
         fadeLeftVariant={fadeLeftVariant}
       />
 
-      <motion.div
+
+      {/* <motion.div
         className="mask flex justify-center items-center"
         style={{
           translateX: cursorXSpring,
           translateY: cursorYSpring,
         }}
-        variants={variants}
+        variants={mouseVariants}
         animate={cursorVariant}
-      />
+      /> */}
     </div>
   );
 }
