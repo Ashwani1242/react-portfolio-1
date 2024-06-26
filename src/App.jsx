@@ -22,7 +22,7 @@ function App() {
 
     let posY 
 
-    const moveCursorWhenStationary = (e) => {
+    const moveCursor = (e) => {
       cursorX.set(window.scrollX + (e.clientX - 50));
       cursorY.set(window.scrollY + (e.clientY - 50));
       posY = e.clientY - 50;
@@ -32,21 +32,11 @@ function App() {
       cursorY.set(posY + window.scrollY)
     }
 
-    // const updateCursorOnScroll = () => {
-    //   const cursorElement = document.querySelector('.mask'); // Assuming your cursor element has this class
-    //   const rect = cursorElement.getBoundingClientRect();
-    //   cursorY.set(rect.bottom + window.scrollY);
-
-    //   console.log(window.scrollY)
-    // };
-
-    window.addEventListener("mousemove", moveCursorWhenStationary);
+    window.addEventListener("mousemove", moveCursor);
     window.addEventListener("scroll", moveCursorOnScroll);
-    //window.addEventListener("scroll", updateCursorOnScroll);
     return () => {
-      window.removeEventListener("mousemove", moveCursorWhenStationary);
+      window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("scroll", moveCursorOnScroll);
-      //window.removeEventListener("scroll", updateCursorOnScroll);
     };
   }, [cursorX, cursorY]);
 
