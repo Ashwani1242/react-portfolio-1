@@ -30,7 +30,7 @@ body {
 .mask {
     mask-image: url("../public/mask.svg");
     background-color: #07897f;
-    position: fixed;
+    position: absolute;
     width: 100px;
     height: 100px;
     top: 0px;

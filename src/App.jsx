@@ -19,16 +19,36 @@ function App() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    const moveCursor = (e) => {
-      cursorX.set(e.pageX - 50);
-      cursorY.set(e.pageY - 50);
+
+    let posY 
+
+    const moveCursorWhenStationary = (e) => {
+      cursorX.set(window.scrollX + (e.clientX - 50));
+      cursorY.set(window.scrollY + (e.clientY - 50));
+      posY = e.clientY - 50;
     };
 
-    window.addEventListener("mousemove", moveCursor);
+    const moveCursorOnScroll = () => {
+      cursorY.set(posY + window.scrollY)
+    }
+
+    // const updateCursorOnScroll = () => {
+    //   const cursorElement = document.querySelector('.mask'); // Assuming your cursor element has this class
+    //   const rect = cursorElement.getBoundingClientRect();
+    //   cursorY.set(rect.bottom + window.scrollY);
+
+    //   console.log(window.scrollY)
+    // };
+
+    window.addEventListener("mousemove", moveCursorWhenStationary);
+    window.addEventListener("scroll", moveCursorOnScroll);
+    //window.addEventListener("scroll", updateCursorOnScroll);
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("mousemove", moveCursorWhenStationary);
+      window.removeEventListener("scroll", moveCursorOnScroll);
+      //window.removeEventListener("scroll", updateCursorOnScroll);
     };
-  }, []);
+  }, [cursorX, cursorY]);
 
   const mouseVariants = {
     default: {
@@ -159,8 +179,8 @@ function App() {
 
   return (
     <div className="">
-      
-      <Cursor />
+
+      {/* <Cursor /> */}
 
       <Navbar
         cursorHidden={cursorHidden}
@@ -204,7 +224,7 @@ function App() {
       />
 
 
-      {/* <motion.div
+      <motion.div
         className="mask flex justify-center items-center"
         style={{
           translateX: cursorXSpring,
@@ -212,7 +232,7 @@ function App() {
         }}
         variants={mouseVariants}
         animate={cursorVariant}
-      /> */}
+      />
     </div>
   );
 }
