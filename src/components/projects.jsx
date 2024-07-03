@@ -15,8 +15,8 @@ const Projects = (props) => {
     return (
         <section
             id="projects-section"
-            onMouseEnter={props.cursorHidden}
-            onMouseLeave={props.textLeave}
+            onMouseEnter={props.cursorEnter_Projects}
+            onMouseLeave={props.cursorDefault}
             className=' flex p-1 justify-center bg-floralwhite items-center'>
             <section ref={targetRef} className="relative h-[1000vh] sm:h-[600vh] bg-transparent">
                 <div className="sticky top-0 h-screen bg-neutral-950 flex flex-col justify-around items-center group">
@@ -45,11 +45,16 @@ const Projects = (props) => {
                             Some things I've made so far...
                         </motion.h1>
                     </div>
-                    <motion.div style={{ x }} className="flex gap-4">
+                    <motion.div
+                        onMouseEnter={props.cursorHidden}
+                        onMouseLeave={props.cursorEnter_Projects} 
+                        style={{ x }} 
+                        className="flex gap-4" >
                         {cards.map((card) => {
                             return <ProjectCard card={card} key={card.id} />;
                         })}
                     </motion.div>
+
                 </div>
             </section>
 

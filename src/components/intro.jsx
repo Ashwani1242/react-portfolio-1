@@ -18,8 +18,8 @@ const Intro = (props) => {
                     ease: "easeOut",
                     delay: 0.1,
                 }}
-                onMouseEnter={props.primaryTextEnter}
-                onMouseLeave={props.textLeave}
+                onMouseEnter={props.cursorEnter_Main}
+                onMouseLeave={props.cursorDefault}
                 className='flex flex-col justify-center items-center absolute'>
                 <div
                     className='flex justify-end bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-600'>
@@ -48,8 +48,8 @@ const Intro = (props) => {
                 }}
                 className='flex justify-between items-end md:px-28 px-10 pb-8 leading-none md:text-3xl sm:text-2xl w-full h-full max-h-[1080px]'>
                 <div
-                    onMouseEnter={props.tirtiaryTextEnter}
-                    onMouseLeave={props.textLeave}
+                    onMouseEnter={props.cursorEnter_Headings}
+                    onMouseLeave={props.cursorDefault}
                     className='flex flex-col'>
                     <p
                         className=''>Ashwani Gupta
@@ -69,7 +69,7 @@ const Intro = (props) => {
                     ease: "easeInOut",
                 }}
                 onMouseEnter={props.cursorHidden}
-                onMouseLeave={props.textLeave}
+                onMouseLeave={props.cursorDefault}
                 whileHover={{
                     scale: 1.1
                 }}>

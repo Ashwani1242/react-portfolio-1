@@ -7,15 +7,17 @@ const Contact = (props) => {
     return (
         <section
             id="contact-section"
-            className="min-h-screen justify-around items-center flex flex-col bg-neutral-90 relative">
-            <img src="/images/test.jpg" alt="" className="-z-50 absolute object-cover w-full h-full overflow-auto opacity-80" />
+            onMouseEnter={props.cursorEnter_Contacts}
+            onMouseLeave={props.cursorDefault}
+            className="min-h-screen justify-around items-center flex flex-col bg-neutral-90 relative max-w-[1920px]">
             <svg className="w-full absolute h-full opacity-50 -z-50" xmlns='http://www.w3.org/2000/svg'>
                 <filter id='noiseFilter'>
                     <feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' />
                 </filter>
                 <rect width='100%' height='100%' filter='url(#noiseFilter)' />
             </svg>
-            <div className="floralwhit w-screen md:px-20 px-10 py-8">
+            <img src="/images/test.jpg" alt="" className="-z-50 absolute w-full h-full object-cover opacity-80" />
+            <div className="floralwhit w-screen md:px-20 px-10 py-8 max-w-[1920px]">
                 <motion.h1
                     initial="hidden"
                     whileInView="visible"
@@ -35,15 +37,13 @@ const Contact = (props) => {
                 variants={props.fadeUpVariant}
                 initial="hidden"
                 whileInView="visible">
-                <ContactForm cursorHidden={props.cursorHidden} textLeave={props.textLeave} />
+                <ContactForm cursorHidden={props.cursorHidden} cursorEnter_Contacts={props.cursorEnter_Contacts} />
             </motion.div>
 
             <div
                 onMouseEnter={props.cursorHidden}
-                onMouseLeave={props.textLeave}
+                onMouseLeave={props.cursorEnter_Contacts}
                 className="flex flex-col mt-auto w-full justify-center items-center bg-black/50 pt-4 md:px-20 px-10">
-
-
                 <div className="flex justify-center items-center w-full mb-4">
                     <div className="h-[1px] w-full bg-neutral-200/80" />
                     <motion.h1

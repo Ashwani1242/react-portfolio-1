@@ -14,7 +14,8 @@ body {
     width: 100vw;
     max-width: 1920px;
     margin: 0 auto;
-    background-color: floralwhite;
+    /* background-color: floralwhite; */
+    background-color: black;
     font-family: "Cormorant", serif;
     font-optical-sizing: auto;
 }
@@ -29,7 +30,7 @@ body {
 
 .mask {
     mask-image: url("../public/mask.svg");
-    background-color: #07897f;
+    background-color: floralwhite;
     position: absolute;
     width: 100px;
     height: 100px;

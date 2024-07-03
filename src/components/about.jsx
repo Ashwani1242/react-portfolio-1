@@ -28,6 +28,8 @@ const About = (props) => {
 
     return (
         <section
+            onMouseEnter={props.cursorEnter_About}
+            onMouseLeave={props.cursorDefault}
             id='about-section'
             className='about-background floralwhite md:p-28 p-10'>
             <div>
@@ -84,7 +86,7 @@ const About = (props) => {
                                     target="_blank"
                                     key={index}
                                     onMouseEnter={props.cursorHidden}
-                                    onMouseLeave={props.textLeave}
+                                    onMouseLeave={props.cursorEnter_About}
                                     variants={props.staggerVariant}
                                     className='border-white border px-4 py-2 cursor-pointer md:text-lg text-sm font-semibold items-center justify-center flex group relative'>
                                     <img src={`/images/skill_icons/${item}.svg`} alt="Icon" className="w-6 h-6 mr-3 z-20" />

@@ -8,7 +8,7 @@ const Navbar = (props) => {
     <motion.div
       variants={props.fadeLeftVariant}
       onMouseEnter={props.cursorHidden}
-      onMouseLeave={props.textLeave}
+      onMouseLeave={props.cursorDefault}
       initial="initial"
       animate="animate"
       transition={{

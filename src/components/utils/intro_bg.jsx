@@ -2,7 +2,9 @@ import React from 'react';
 
 const IntroBG = () => {
   return (
-    <div className='w-screen h-screen absolute flex items-center -z-20'>
+    <div className='w-screen h-screen absolute flex items-center -z-20 max-w-[1920px] max-h-[1080px]'>
+      <div className='-z-50 absolute top-2 left-2 bg-floralwhite bg-red-40 w-[600px] h-[40px]'>
+      </div>
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className='absolute blur-2xl md:h-[1200px] md:w-[1200px] h-[800px] w-[800px] md:right-10'>
                 <path fill="#f6c6b2" transform="translate(100 100)">
                     <animate attributeName='d'

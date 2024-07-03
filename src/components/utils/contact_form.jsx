@@ -51,7 +51,7 @@ const ContactForm = (props) => {
     return (
         <section
             onMouseEnter={props.cursorHidden}
-            onMouseLeave={props.textLeave}
+            onMouseLeave={props.cursorEnter_Contacts}
             className="contact-form justify-center items-center flex pb-6">
             <form
                 ref={formRef} action="" onSubmit={onSubmit} className="flex-col p-4 space-y-2 bg-white/70 border border-black" >

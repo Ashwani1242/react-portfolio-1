@@ -6,8 +6,9 @@ import Projects from "./components/projects";
 import Contact from "./components/contact";
 import Cursor from './components/utils/cursor';
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { color, motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
+import AnimatedButton from './components/utils/animated_button';
 
 function App() {
 
@@ -18,9 +19,10 @@ function App() {
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
-  useEffect(() => {
 
-    let posY 
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+    let posY
 
     const moveCursor = (e) => {
       cursorX.set(window.scrollX + (e.clientX - 50));
@@ -29,7 +31,7 @@ function App() {
     };
 
     const moveCursorOnScroll = () => {
-      cursorY.set(posY + window.scrollY)
+      cursorY.set(posY + window.scrollY);
     }
 
     window.addEventListener("mousemove", moveCursor);
@@ -42,36 +44,74 @@ function App() {
 
   const mouseVariants = {
     default: {
-      mixBlendMode: "exclusion"
+      mixBlendMode: "exclusion",
+      color: "black",
+      backgroundImage: "url('')",
     },
-    primaryText: {
+    cursorEnter_Main: {
       scale: 3,
       backgroundColor: "White",
-      mixBlendMode: "exclusion"
+      mixBlendMode: "exclusion",
+      color: "white"
     },
-    secondaryText: {
-      scale: 2,
+    cursorEnter_Headings: {
+      scale: 1.7,
       backgroundColor: "White",
       mixBlendMode: "exclusion"
     },
-    tirtiaryText: {
-      scale: 1.5,
-      backgroundColor: "purple",
-      mixBlendMode: "exclusion"
+    cursorEnter_About: {
+      mixBlendMode: "exclusion",
     },
-    hidden: {
+    cursorEnter_Projects: {
+      scale: 1.2,
+      backgroundColor: "floralwhite",
+      color: "black",
+      border: "2px solid black",
+      borderRadius: "100%",
+      mixBlendMode: "normal"
+    },
+    cursorEnter_Contacts: {
+      scale: 1,
+      backgroundColor: "floralwhite",
+      color: "black",
+      border: "2px solid black",
+      borderRadius: "100%",
+      mixBlendMode: "normal"
+    },
+    cursorHidden: {
       scale: 0,
       backgroundColor: "black",
       mixBlendMode: "normal"
     }
   }
 
+  const getTextForVariant = (variant) => {
+    switch (variant) {
+      case 'cursorEnter_Main':
+        return '';
+      case 'cursorEnter_Headings':
+          return '';
+      case 'cursorEnter_About':
+            return '';
+      case 'cursorEnter_Projects':
+        return 'Scroll!';
+      case 'cursorEnter_Contacts':
+        return 'Hello?';
+      case 'cursorHidden':
+        return 'Hidden';
+      default:
+        return 'Welcome!';
+    }
+  };
+
   const [cursorVariant, setCursorVariant] = useState("default")
-  const primaryTextEnter = () => setCursorVariant("primaryText")
-  const secondaryTextEnter = () => setCursorVariant("secondaryText")
-  const tirtiaryTextEnter = () => setCursorVariant("tirtiaryText")
-  const textLeave = () => setCursorVariant("default")
-  const cursorHidden = () => setCursorVariant("hidden")
+  const cursorEnter_Main = () => setCursorVariant("cursorEnter_Main")
+  const cursorEnter_About = () => setCursorVariant("cursorEnter_About")
+  const cursorEnter_Headings = () => setCursorVariant("cursorEnter_Headings")
+  const cursorEnter_Projects = () => setCursorVariant("cursorEnter_Projects")
+  const cursorEnter_Contacts = () => setCursorVariant("cursorEnter_Contacts")
+  const cursorDefault = () => setCursorVariant("default")
+  const cursorHidden = () => setCursorVariant("cursorHidden")
 
   const staggerVariant = {
     hidden: { opacity: 0, y: 30 },
@@ -169,28 +209,30 @@ function App() {
 
   return (
     <div className="">
-
+      {/* <div className='text-black -z-50 absolute top-2 left-2'> Why would you zoom out?? 😢</div> */}
       {/* <Cursor /> */}
+
+      <AnimatedButton />
 
       <Navbar
         cursorHidden={cursorHidden}
-        textLeave={textLeave}
+        cursorDefault={cursorDefault}
         fadeLeftVariant={fadeLeftVariant}
       />
 
       <Intro
         cursorHidden={cursorHidden}
-        tirtiaryTextEnter={tirtiaryTextEnter}
-        secondaryTextEnter={secondaryTextEnter}
-        primaryTextEnter={primaryTextEnter}
-        textLeave={textLeave}
+        cursorEnter_Headings={cursorEnter_Headings}
+        cursorEnter_Main={cursorEnter_Main}
+        cursorDefault={cursorDefault}
         fadeUpVariant={fadeUpVariant}
         fadeRightVariant={fadeRightVariant}
       />
 
       <About
         cursorHidden={cursorHidden}
-        textLeave={textLeave}
+        cursorEnter_About={cursorEnter_About}
+        cursorDefault={cursorDefault}
         staggerVariant={staggerVariant}
         fadeUpVariant={fadeUpVariant}
         fadeDownVariant={fadeDownVariant}
@@ -199,30 +241,33 @@ function App() {
       />
 
       <Projects
+        cursorEnter_Projects={cursorEnter_Projects}
         cursorHidden={cursorHidden}
-        textLeave={textLeave}
+        cursorDefault={cursorDefault}
         fadeUpVariant={fadeUpVariant}
         fadeLeftVariant={fadeLeftVariant}
       />
 
       <Contact
+        cursorEnter_Contacts={cursorEnter_Contacts}
         cursorHidden={cursorHidden}
-        textLeave={textLeave}
+        cursorDefault={cursorDefault}
         staggerVariant={staggerVariant}
         fadeUpVariant={fadeUpVariant}
         fadeLeftVariant={fadeLeftVariant}
       />
 
 
-      <motion.div
+      {/* <motion.div
         className="mask flex justify-center items-center"
         style={{
           translateX: cursorXSpring,
           translateY: cursorYSpring,
         }}
         variants={mouseVariants}
-        animate={cursorVariant}
-      />
+        animate={cursorVariant} >
+        <p className='text-lg font-bold'> {getTextForVariant(cursorVariant)} </p>
+      </motion.div> */}
     </div>
   );
 }
