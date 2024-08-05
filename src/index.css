@@ -14,8 +14,8 @@ body {
     width: 100vw;
     max-width: 1920px;
     margin: 0 auto;
-    /* background-color: floralwhite; */
-    background-color: black;
+    background-color: floralwhite;
+    /* background-color: black; */
     font-family: "Cormorant", serif;
     font-optical-sizing: auto;
 }

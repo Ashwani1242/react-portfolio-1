@@ -3,19 +3,9 @@ import { motion } from "framer-motion";
 import { Link } from 'react-scroll';
 import resume from './files/resume.pdf'
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
     <motion.div
-      variants={props.fadeLeftVariant}
-      onMouseEnter={props.cursorHidden}
-      onMouseLeave={props.cursorDefault}
-      initial="initial"
-      animate="animate"
-      transition={{
-        duration: .4,
-        ease: "easeOut",
-        delay: 0.6,
-      }}
       className='flex md:p-2 text-lg'>
       <ul className='md:flex md:space-x-[1px] md:space-y-0 space-y-[1px] bg-black border border-black w-full font-semibold'>
         <li className='bg-white cursor-pointer group relative '>

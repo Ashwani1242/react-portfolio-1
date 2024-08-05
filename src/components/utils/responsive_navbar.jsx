@@ -7,8 +7,18 @@ const ResponsiveNavbar = (props) => {
     const [active, setActive] = useState(false);
 
     return (
-        <div>
-            <div className='fixed flex flex-col items-end top-2 right-2 z-50 md:hidden'>
+        <motion.div
+            variants={props.fadeLeftVariant}
+            onMouseEnter={props.cursorHidden}
+            onMouseLeave={props.cursorDefault}
+            initial="initial"
+            animate="animate"
+            transition={{
+                duration: .4,
+                ease: "easeOut",
+                delay: 0.6,
+            }} >
+            <div className='fixed flex flex-col items-end top-0 right-0 pr-2 pt-2 z-50 md:hidden'>
                 <motion.button
                     onClick={() => setActive((pv) => !pv)}
                     animate={active ? "open" : "closed"}
@@ -75,23 +85,15 @@ const ResponsiveNavbar = (props) => {
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.5 }}
                             className="mt-2" >
-                            <Navbar
-                                cursorHidden={props.cursorHidden}
-                                cursorDefault={props.cursorDefault}
-                                fadeLeftVariant={props.fadeLeftVariant}
-                            />
+                            <Navbar />
                         </motion.div>
                     )}
                 </AnimatePresence>
             </div>
-            <div className='fixed top-2 right-2 z-50 md:block hidden'>
-                <Navbar
-                    cursorHidden={props.cursorHidden}
-                    cursorDefault={props.cursorDefault}
-                    fadeLeftVariant={props.fadeLeftVariant}
-                />
+            <div className='fixed top-0 right-0 pr-2 pt-2 z-50 md:block hidden'>
+                <Navbar />
             </div>
-        </div>
+        </motion.div>
     )
 }
 

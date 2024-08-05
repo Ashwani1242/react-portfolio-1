@@ -62,7 +62,7 @@ function App() {
       mixBlendMode: "exclusion",
     },
     cursorEnter_Projects: {
-      scale: 1.2,
+      scale: 1,
       backgroundColor: "floralwhite",
       color: "black",
       border: "2px solid black",
@@ -71,9 +71,9 @@ function App() {
     },
     cursorEnter_Contacts: {
       scale: 1,
-      backgroundColor: "floralwhite",
-      color: "black",
-      border: "2px solid black",
+      backgroundColor: "black",
+      color: "floralwhite",
+      border: "2px solid floralwhite",
       borderRadius: "100%",
       mixBlendMode: "normal"
     },
@@ -255,7 +255,7 @@ function App() {
       />
 
 
-      {/* <motion.div
+      <motion.div
         className="mask flex justify-center items-center"
         style={{
           translateX: cursorXSpring,
@@ -264,7 +264,7 @@ function App() {
         variants={mouseVariants}
         animate={cursorVariant} >
         <p className='text-lg font-bold'> {getTextForVariant(cursorVariant)} </p>
-      </motion.div> */}
+      </motion.div>
     </div>
   );
 }
