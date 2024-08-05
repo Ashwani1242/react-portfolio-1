@@ -16,7 +16,7 @@ const Navbar = (props) => {
         ease: "easeOut",
         delay: 0.6,
       }}
-      className='flex md:p-2 top-2 right-2 text-lg fixed z-50'>
+      className='flex md:p-2 text-lg'>
       <ul className='md:flex md:space-x-[1px] md:space-y-0 space-y-[1px] bg-black border border-black w-full font-semibold'>
         <li className='bg-white cursor-pointer group relative '>
           <Link

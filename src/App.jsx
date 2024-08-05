@@ -1,14 +1,13 @@
 import React from 'react';
 import About from "./components/about";
 import Intro from "./components/intro";
-import Navbar from "./components/navbar";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
 import Cursor from './components/utils/cursor';
 
 import { color, motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
-import AnimatedButton from './components/utils/animated_button';
+import ResponsiveNavbar from './components/utils/responsive_navbar';
 
 function App() {
 
@@ -212,9 +211,7 @@ function App() {
       {/* <div className='text-black -z-50 absolute top-2 left-2'> Why would you zoom out?? 😢</div> */}
       {/* <Cursor /> */}
 
-      <AnimatedButton />
-
-      <Navbar
+      <ResponsiveNavbar 
         cursorHidden={cursorHidden}
         cursorDefault={cursorDefault}
         fadeLeftVariant={fadeLeftVariant}
