@@ -18,7 +18,7 @@ const SocialLinks = (props) => {
                                 href={link.url}
                                 target='_blank'
                                 key={index}
-                                className='bg-white/50 border border-white cursor-pointer group relative py-2 px-6 text-nowrap '>
+                                className='bg-white/50 border border-white cursor-pointer group relative py-2 px-6 text-nowrap'>
                                 <div className='relative w-8 h-8 rounded-md bg-whit inset-0 flex items-center justify-center z-20'>
                                     <img src={link.icon} alt='Icon' className='w-6 h-6' />
                                     <span className="absolute opacity-0 group-hover:opacity-100 group-hover:text-white group-hover:text-md group-hover:-translate-y-12 duration-700">
